@@ -1,1 +1,48 @@
-<h1>Test</h1>
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+<head>
+	<title>Predictive Modeling Tool</title>
+
+	<script type="text/javascript" src="https://spotfire.cloud.tibco.com/spotfire/wp/GetJavaScriptApi.ashx?Version=7.5"></script>
+
+	<script type="text/javascript">
+		
+		var c_serverUrl = "http://wdncfspf03.ncf.wdc.com/spotfire/wp/";
+		var c_analysisPath = "/Engineering Sanbox/Tony Liu";
+
+		var c_parameters = "";
+		var customization = new spotfire.webPlayer.Customization();
+
+		var app;
+
+		var c_reloadAnalysisInstance = false;
+
+		window.onload = function() {
+			app = new spotfire.webPlayer.Application(c_serverUrl, customization, c_analysisPath, c_parameters, c_reloadAnalysisInstance);
+			
+			customization.showDodPanel = false;
+			customization.showStatusBar = true;
+			customization.showToolBar = true;
+			customization.showPageNavigation = true;
+			customization.showClose = false;
+			customization.showAnalysisInfo = true;
+			customization.showExportFile = true;
+			customization.showExportVisualization = true;
+			customization.showUndoRedo = true;
+			customization.showFilterPanel = true;
+
+			var viewOne = app.openDocument("demoViz", "MyModel", customization)
+		}
+
+	</script>
+
+</head>
+<body>
+SUP
+<div id="demoViz"><br></div>
+</body>
+</html>
